@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('exam_cycles', function (Blueprint $table) {
+        Schema::create('section_types', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->enum('season', ['Spring', 'Summer', 'Autumn', 'Winter']);
+            $table->string('name');
             $table->string('code')->unique();
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->text('description')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('exam_cycles');
+        Schema::dropIfExists('section_types');
     }
 };
