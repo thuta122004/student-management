@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('nrc')->unique();
             $table->date('dob');
-            $table->enum('gender', ['Male', 'Female']);
+            $table->enum('gender', ['MALE', 'FEMALE']);
             $table->string('phone');
             $table->string('email');
             $table->string('edu_mail')->nullable()->unique();

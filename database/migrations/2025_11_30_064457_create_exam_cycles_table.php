@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('exam_cycles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->enum('season', ['Spring', 'Summer', 'Autumn', 'Winter']);
+            $table->enum('season', ['SPRING', 'SUMMER', 'AUTUMN', 'WINTER']);
             $table->string('code')->unique();
             $table->date('start_date');
             $table->date('end_date');
